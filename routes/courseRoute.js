@@ -1,10 +1,11 @@
 const express=require('express');
 const router=express.Router();
+const upload = require('../utils/multerConfig'); 
 const courseController=require('../controllers/courseController');
 
-router.post('/',courseController.createCourseController);
+router.post('/',upload.single('imageUrl'),courseController.createCourseController);
 router.get('/',courseController.getAllCourseController);
 router.get('/:id',courseController.getByIdCourseController);
-router.put('/:id',courseController.updateCourseController);
+router.put('/:id',upload.single ('imageUrl'),courseController.updateCourseController);
 
 module.exports=router

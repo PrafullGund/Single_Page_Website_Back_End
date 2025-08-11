@@ -1,13 +1,14 @@
 const dbConnection = require('../config/connection');
 
 const createRegistrationService = (registrationData, callback) => {
-    const query = 'INSERT INTO registration (studentName, emailId, mobileNumber, courseId) VALUES (?, ?, ?, ?)';
+    const query = 'INSERT INTO registration (studentName, emailId, mobileNumber, education,courseId) VALUES (?, ?, ?, ?,?)';
 
     dbConnection.query(query, 
         [
             registrationData.studentName,
             registrationData.emailId,
             registrationData.mobileNumber,
+            registrationData.education,
             registrationData.courseId
         ], 
         (error, result) => {

@@ -3,7 +3,7 @@ const router=express.Router();
 const testimonialsController = require('../controllers/testimonialsControllers');
 const upload = require('../utils/multerConfig');
 
-router.post('/', upload.single('image'), testimonialsController.createTestimonialsController);
+router.post('/', upload.single('imageUrl'), testimonialsController.createTestimonialsController);
 router.get('/',testimonialsController.getAllTestimonialsController);
 router.put('/:id', upload.single('image'), testimonialsController.updateTestimonialsController);
 

@@ -10,13 +10,15 @@ app.use(bodyParser.json());
 const courseRoute=require('./routes/courseRoute');
 const testimonialsRoute=require('./routes/testimonialsRoute');
 const ourTeamRoute=require('./routes/ourTeamRoute');
-const registrationRoute=require('./routes/registrationRoute')
+const registrationRoute=require('./routes/registrationRoute');
+const contactUsRoute=require('./routes/contactUsRoute');
 
 const port=process.env.PORT|3000;
 app.use('/course',courseRoute);
 app.use('/testimonials',testimonialsRoute);
 app.use('/ourTeam',ourTeamRoute);
-app.use('/registration',registrationRoute)
+app.use('/registration',registrationRoute);
+app.use('/contactUs',contactUsRoute)
 app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 
 app.listen(port,()=>{
